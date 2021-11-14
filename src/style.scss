@@ -1,0 +1,63 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+body {
+  font-family: 'Source Sans Pro', monospace, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: #ebecee;
+}
+
+body * {
+  box-sizing: border-box;
+}
+/*
+#btnMount {
+  width: 100px;
+  height: 20px;
+  font-weight: bold;
+}
+
+#btnUnmount {
+  width: 100px;
+  height: 20px;
+  font-weight: bold;
+}
+*/
+.inputStateInfo {
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  div {
+    text-align: left;
+    font-size: 12px;
+    span {
+      color: red;
+    }
+  }
+}
+#logger {
+  font-size: 10px;
+  //position: absolute;
+  //top: 65px;
+  //left: 270px;
+
+  li {
+    padding: 3px 2px;
+    border-bottom: 1px dashed #a5a2a2;
+
+    .cmp {
+      background-color: #dcf5ff;
+      color: #8392ca;
+      padding: 0 2px;
+    }
+
+    .hook {
+      color: #e93004;
+    }
+
+    .msg {
+      color: black;
+      font-style: italic
+    }
+  }
+}
