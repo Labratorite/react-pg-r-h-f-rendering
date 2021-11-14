@@ -33,6 +33,7 @@ const Form: React.FC = () => {
         <label htmlFor="title">title</label>
         <input {...register("title")} />
       </div>
+      <ClearError />
     </>
   );
 };
