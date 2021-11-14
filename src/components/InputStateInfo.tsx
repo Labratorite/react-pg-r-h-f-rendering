@@ -1,10 +1,11 @@
 import React from "react";
-import { useFormContext, UseFormReturn } from "react-hook-form";
+import { useFormContext, useFormState } from "react-hook-form";
 import logger from "../logger";
 import "../style.scss";
 import { ErrorMessage } from "@hookform/error-message";
-import { FormFieldKey, FormFields } from "./Form";
+import { FormFieldKey } from "./Form";
 
+/*
 const NestedInput: React.FC<
   { fieldKey: FormFieldKey } & UseFormReturn<FormFields>
 > = (props) => {
@@ -27,7 +28,6 @@ const NestedInput: React.FC<
     </div>
   );
 };
-
 const NestedInputWapper = React.memo(
   NestedInput,
   (prevProps, nextProps) =>
@@ -36,26 +36,32 @@ const NestedInputWapper = React.memo(
     prevProps.formState.errors[prevProps.fieldKey] ===
       nextProps.formState.errors[nextProps.fieldKey]
 );
+*/
 
 const InputStateInfo: React.FC<{ name: FormFieldKey }> = ({ name }) => {
   logger.info("InputStateInfo", "RE-RENDER");
-  const methods = useFormContext<FormFields>();
-  //const {control} = useFormContext();
+  //const methods = useFormContext<FormFields>();
+  const { control } = useFormContext();
   //const formState = useFormState({ control });
-  //const { errors, isDirty } = useFormState({ control }); // これなら大丈夫
-
-  //console.log(errors);
+  const { errors, isDirty } = useFormState({ control });
+  //const { errors } = useFormState({ control });
   return (
-    <NestedInputWapper fieldKey={name} {...methods} />
-    /*
-    <p className="inputStateInfo">
+    //<NestedInputWapper fieldKey={name} {...methods} />
+    <div className="inputStateInfo">
       <div>dirty? {isDirty && <span>yes</span>}</div>
-      <div>errors?
-          <span>
-            <ErrorMessage errors={errors} name={name} />
-          </span>
+      <div>
+        errors?
+        <ErrorMessage errors={errors} name={name} as="span" />
       </div>
-    </p>
+    </div>
+    /*
+    <div className="inputStateInfo">
+      <div>
+        <span>
+          <ErrorMessage errors={errors} name={name} />
+        </span>
+      </div>
+    </div>
     */
   );
 };

@@ -14,7 +14,10 @@ const onclick = () => {
 };
 const BaseContainer: React.FC = () => {
   logger.info("BaseContainer", "RE-RENDER");
-  const methods = useForm<FormFields>({ defaultValues: initValues });
+  const methods = useForm<FormFields>({
+    //reValidateMode: 'onBlur',
+    defaultValues: initValues
+  });
   const { handleSubmit } = methods;
 
   const onSubmit = (values: FormFields) => {
