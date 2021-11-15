@@ -1,19 +1,13 @@
 import React from "react";
 import { useFormContext } from "react-hook-form";
+//import { UseFormReturn } from "react-hook-form";
 import logger from "../logger";
 import NameCopy from "./NameCopy";
 import ClearError from "./ClearError";
 import InputStateInfo from "./InputStateInfo";
+import { FormParams } from "./types";
 
-export interface FormFields {
-  baseName: string;
-  copyName: string;
-  title: string;
-}
-
-export type FormFieldKey = keyof FormFields;
-
-const Form: React.FC = () => {
+const Form: React.FC<FormParams> = () => {
   logger.info("Form", "RE-RENDER");
   const { register } = useFormContext();
   return (

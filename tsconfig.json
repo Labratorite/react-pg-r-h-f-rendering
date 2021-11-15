@@ -3,6 +3,12 @@
         "./src/**/*"
     ],
     "compilerOptions": {
+        "baseUrl": "./",
+        //"paths": {"base64-js": ["types/base64-js"]},
+        "typeRoots": [
+            "./**/types",
+            "node_modules/@types"
+        ],
         "strict": true,
         "esModuleInterop": true,
         "lib": [

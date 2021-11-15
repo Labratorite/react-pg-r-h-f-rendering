@@ -22,6 +22,7 @@ const NameCopy: React.FC = () => {
   return (
     <>
       <div>
+        <label htmlFor="copyName">copyName</label>
         <input {...register("copyName", { maxLength: 10, required: true })} />
       </div>
     </>

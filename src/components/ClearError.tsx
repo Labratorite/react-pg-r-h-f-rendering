@@ -1,6 +1,6 @@
 import React from "react";
 import { useWatch, useFormContext, useFormState } from "react-hook-form";
-import { FormFields } from "./Form";
+import { FormFields } from "./types";
 import logger from "../logger";
 import "../style.scss";
 

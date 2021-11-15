@@ -3,7 +3,7 @@ import { useFormContext, useFormState } from "react-hook-form";
 import logger from "../logger";
 import "../style.scss";
 import { ErrorMessage } from "@hookform/error-message";
-import { FormFieldKey } from "./Form";
+import { FormFieldKey } from "./types";
 
 /*
 const NestedInput: React.FC<

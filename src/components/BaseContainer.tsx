@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm, FormProvider } from "react-hook-form";
-import Form, { FormFields } from "./Form";
+import { FormFields } from "./types";
+import Form from "./Form";
 import logger from "../logger";
 
 const initValues: FormFields = {
