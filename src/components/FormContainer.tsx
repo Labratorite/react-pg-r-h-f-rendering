@@ -13,8 +13,8 @@ const initValues: FormFields = {
 const onclick = () => {
   logger.info("------", "------");
 };
-const BaseContainer: React.FC = () => {
-  logger.info("BaseContainer", "RE-RENDER");
+const FormContainer: React.FC = () => {
+  logger.info("FormContainer", "RE-RENDER");
   const methods = useForm<FormFields>({
     //reValidateMode: 'onBlur',
     defaultValues: initValues
@@ -22,7 +22,7 @@ const BaseContainer: React.FC = () => {
   const { handleSubmit } = methods;
 
   const onSubmit = (values: FormFields) => {
-    logger.info("BaseContainer", "SUBMIT");
+    logger.info("FormContainer", "-SUBMIT");
     console.log("onSubmit", values);
   };
 
