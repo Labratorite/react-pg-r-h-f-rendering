@@ -2,9 +2,9 @@ import React from "react";
 import { useFormContext } from "react-hook-form";
 //import { UseFormReturn } from "react-hook-form";
 import logger from "../logger";
-import NameCopy from "./NameCopy";
-import ClearError from "./ClearError";
-import InputStateInfo from "./InputStateInfo";
+import NameCopy from "./parts/NameCopy";
+import ClearError from "./parts/ClearError";
+import InputStateInfo from "./parts/InputStateInfo";
 import { FormParams } from "./types";
 
 const Form: React.FC<FormParams> = () => {
@@ -27,6 +27,7 @@ const Form: React.FC<FormParams> = () => {
         <label htmlFor="title">title</label>
         <input {...register("title")} />
       </div>
+
       <ClearError />
     </>
   );

@@ -40,7 +40,8 @@ const logger = {
   },
 
   clear: function () {
-    //loggerElement?.innerHTML = "";
+    if (!loggerElement) return;
+    loggerElement.innerText = "";
   }
 };
 

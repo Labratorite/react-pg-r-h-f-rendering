@@ -3,6 +3,7 @@ import { useForm, FormProvider } from "react-hook-form";
 import { FormFields } from "./types";
 import Form from "./Form";
 import logger from "../logger";
+import { DevTool } from "@hookform/devtools";
 
 const initValues: FormFields = {
   baseName: "",
@@ -10,7 +11,7 @@ const initValues: FormFields = {
   title: ""
 };
 
-const onclick = () => {
+const onBarClick = () => {
   logger.info("------", "------");
 };
 const FormContainer: React.FC = () => {
@@ -19,7 +20,7 @@ const FormContainer: React.FC = () => {
     //reValidateMode: 'onBlur',
     defaultValues: initValues
   });
-  const { handleSubmit } = methods;
+  const { control, handleSubmit } = methods;
 
   const onSubmit = (values: FormFields) => {
     logger.info("FormContainer", "-SUBMIT");
@@ -28,11 +29,12 @@ const FormContainer: React.FC = () => {
 
   return (
     <FormProvider {...methods}>
+      <DevTool control={control} placement="top-left" />
       <form onSubmit={handleSubmit(onSubmit)}>
         <Form />
         <button type="submit">submit</button>
       </form>
-      <button type="button" onClick={onclick}>
+      <button type="button" onClick={onBarClick}>
         bar
       </button>
     </FormProvider>
